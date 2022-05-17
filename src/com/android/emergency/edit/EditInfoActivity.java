@@ -43,12 +43,14 @@ import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 
+import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
+
 import java.util.ArrayList;
 
 /**
  * Activity for editing emergency information.
  */
-public class EditInfoActivity extends Activity {
+public class EditInfoActivity extends CollapsingToolbarBaseActivity {
     static final String TAG_CLEAR_ALL_DIALOG = "clear_all_dialog";
 
     private EditInfoFragment mEditInfoFragment;
@@ -66,11 +68,11 @@ public class EditInfoActivity extends Activity {
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
         // We only add a new EditInfoFragment if no fragment is restored.
-        Fragment fragment = getFragmentManager().findFragmentById(android.R.id.content);
+        Fragment fragment = getFragmentManager().findFragmentById(R.id.content_frame);
         if (fragment == null) {
             mEditInfoFragment = new EditInfoFragment();
             getFragmentManager().beginTransaction()
-                .add(android.R.id.content, mEditInfoFragment)
+                .add(R.id.content_frame, mEditInfoFragment)
                 .commit();
         } else {
             mEditInfoFragment = (EditInfoFragment) fragment;

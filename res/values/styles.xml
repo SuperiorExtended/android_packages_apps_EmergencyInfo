@@ -14,12 +14,7 @@
      limitations under the License.
 -->
 <resources>
-    <style name="AppTheme" parent="@android:style/Theme.DeviceDefault.Settings">
-        <item name="colorPrimaryDark">@color/primary_dark_color</item>
-        <item name="tabIndicatorColor">@color/accent_color_dark</item>
-        <item name="textColorActionBar">?android:attr/textColorPrimary</item>
-        <item name="preferenceTheme">@style/PreferenceTheme</item>
-    </style>
+    <style name="AppTheme" parent="Theme.SubSettingsBase" />
 
     <!-- Base emergency theme. -->
     <style name="AppThemeEmergency" parent="Theme.AppCompat.Light.NoActionBar">
